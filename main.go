@@ -34,7 +34,7 @@ func getLetter(found []string) (string, error) {
 	for {
 		letter, err := prompt("Pick a letter:", join(found, " "))
 		if err != nil {
-			panic(err)
+			return "", err
 		}
 		if len(letter) == 1 && containsAny(alphabet, letter) {
 			return letter, nil
