@@ -74,9 +74,10 @@ func main() {
 	words := []string{
 		"zebra", "moose", "alligator", "elephant", "ibex", "jerboa", "cat",
 	} // list of words to pick from
-	rand.Seed(time.Now().UnixNano())     // seed math/rand with current time
-	word := words[rand.Intn(len(words))] // get random word with the help of math/rand
-	nGusses := len(word)                 // for N-letter word, player has N gusses
+	rand.Seed(time.Now().UnixNano()) // seed math/rand with current time
+	rIndex := rand.Intn(len(words))  // get random index using math/rand
+	word := words[rIndex]            // get random word with the help of random index
+	nGusses := len(word)             // for N-letter word, player has N gusses
 	found := make([]string, 0, len(word))
 	for i := 0; i < nGusses; i++ {
 		found = append(found, "_")
