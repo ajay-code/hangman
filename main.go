@@ -22,10 +22,11 @@ func join(strings []string, seperator string) string {
 		return ""
 	}
 	s := ""
-	for _, v := range strings {
+	lastIndex := len(strings) - 1
+	for _, v := range strings[0:lastIndex] {
 		s += v + seperator
 	}
-	return s
+	return s + strings[lastIndex]
 }
 
 func getLetter(found []string) (string, error) {
